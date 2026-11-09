@@ -20,9 +20,19 @@
 
 typedef struct s_woosy
 {
-
+    int             fd;
+    int             file_size;
+    char            *strtab;
+    const char      *binary;
+    unsigned char   *elf;
+    Elf64_Ehdr      *e_header;
+    Elf64_Shdr      *s_header;
+    struct stat     file_info;
+    struct dirent   *read_dir;
 }   t_woody;
 
 /*  FUNCTIONS   */
+
+int ft_is_valid_elf64(t_woody *woody, char *str);
 
 #endif
